@@ -1,0 +1,72 @@
+{
+  "version": "2.0",
+  "app_name": "demoapp",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "iam_policy_file":"policy.json",
+      "environment_variables":{
+        "stage":"dev",
+        "LD_LIBRARY_PATH": "/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib:/opt/lib:/opt/pyt$",
+        "queue_pbdm":"https://sqs.eu-west-1.amazonaws.com/284176251738/dev-medgold-pbdmworker",
+        "download_path":"/tmp/",
+        "upload_path": "data/",
+        "state_machine_execution":"arn:aws:states:eu-west-1:284176251738:execution:dev-mgd-ict-platform-sf-horta-wf:",
+        "state_machine_arn":"arn:aws:states:eu-west-1:284176251738:stateMachine:dev-mgd-ict-platform-sf-horta-wf",
+        "requests_table": "med-gold_API_requests",
+        "workflow_table": "dev-mgd-ict-platform-dataset-wfs-db-table",
+        "datasetinfo_table": "dev-mgd-ict-platform-dataset-info-db-table",
+        "BUCKET_NAME": "med-gold-prove",
+        "cognito_arns":"arn:aws:cognito-idp:eu-west-1:284176251738:userpool/eu-west-1_owfEtSFcp",
+        "pool_id": "eu-west-1_owfEtSFcp",
+        "pool_region" : "eu-west-1",
+        "client_id" : "7efjel0mg7qrjrvgb19dr3ooff"
+      }
+    }, 
+     "stage": {
+      "api_gateway_stage": "api",
+      "iam_policy_file":"policy.json",
+      "environment_variables":{
+        "stage":"stage",
+        "LD_LIBRARY_PATH": "/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib:/opt/lib:/opt/pyt$",
+        "queue_url": "https://sqs.eu-west-1.amazonaws.com/284176251738/dev-medgold-apiworkersqs",
+        "queue_pbdm":"https://sqs.eu-west-1.amazonaws.com/284176251738/dev-medgold-pbdmworker",
+        "download_path":"/tmp/",
+        "upload_path": "data/",
+        "state_machine_execution":"arn:aws:states:eu-west-1:284176251738:execution:prod-medgold-sf-hortawf:",
+        "state_machine_arn":"arn:aws:states:eu-west-1:284176251738:stateMachine:prod-medgold-sf-hortawf",
+        "requests_table": "med-gold_API_requests",
+        "workflow_table": "dev-medgold-workflow",
+        "datasetinfo_table": "dev-medgold-dataset_info",
+        "BUCKET_NAME": "med-gold-prove",
+        "cognito_arns":"arn:aws:cognito-idp:eu-west-1:284176251738:userpool/eu-west-1_owfEtSFcp",
+        "pool_id": "eu-west-1_owfEtSFcp",
+        "pool_region" : "eu-west-1",
+        "client_id" : "7efjel0mg7qrjrvgb19dr3ooff"
+      }
+    },
+    "prod": {
+      "api_gateway_stage": "api",
+      "iam_policy_file":"policy.json",
+      "environment_variables":{
+        "stage":"prod",
+        "LD_LIBRARY_PATH": "/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib:/opt/lib:/opt/pyt$",
+        "queue_url": "https://sqs.eu-west-1.amazonaws.com/284176251738/prod-medgold-apiworkersqs",
+        "queue_pbdm":"https://sqs.eu-west-1.amazonaws.com/284176251738/prod-medgold-pbdmworker",
+        "download_path":"/tmp/",
+        "upload_path": "data/",
+        "state_machine_execution":"arn:aws:states:eu-west-1:284176251738:execution:prod-medgold-sf-hortawf:",
+        "state_machine_arn":"arn:aws:states:eu-west-1:284176251738:stateMachine:prod-medgold-sf-hortawf",
+        "requests_table": "prod-medgold-APIrequests",
+        "workflow_table": "prod-medgold-workflow",
+        "datasetinfo_table": "prod-medgold-datasets_info",
+        "BUCKET_NAME": "med-gold-prove",
+        "cognito_arns":"arn:aws:cognito-idp:eu-west-1:284176251738:userpool/eu-west-1_owfEtSFcp",
+        "pool_id": "eu-west-1_owfEtSFcp",
+        "pool_region" : "eu-west-1",
+        "client_id" : "7efjel0mg7qrjrvgb19dr3ooff"
+      }
+    }
+  }
+}
+

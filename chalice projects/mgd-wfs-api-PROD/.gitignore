@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+.chalice/deployments/
+__pycache__/
+.DS_Store
+*.py[cod]
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
